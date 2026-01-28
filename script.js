@@ -88,9 +88,16 @@ const imageFiles = [
       carousel.appendChild(item);
     });
   
-    // Pause/resume on hover
+    // Desktop hover pause/resume
     carousel.addEventListener("mouseenter", stopCarousel);
     carousel.addEventListener("mouseleave", startCarousel);
+
+    // Mobile: tap to pause/resume (iPhone-friendly)
+    carousel.addEventListener("click", () => {
+    if (!carouselRunning) startCarousel();
+      else stopCarousel();
+    });
+
   
     carouselBuilt = true;
   }

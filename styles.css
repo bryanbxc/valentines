@@ -210,9 +210,73 @@
     opacity: 0.65;
   }
   
-  /* Mobile tweaks */
-  @media (max-width: 480px){
-    .item3d { width: 280px; height: 200px; }
-    .container3d { height: 240px; }
+  @media (max-width: 414px) {
+    body {
+      padding: 14px;
+    }
+  
+    .card {
+      width: min(680px, 94vw);
+      padding: 18px 16px 16px;
+      border-radius: 20px;
+    }
+  
+    h1 {
+      font-size: 26px;
+      line-height: 1.15;
+      margin-bottom: 10px;
+    }
+  
+    .sub {
+      font-size: 15px;
+      margin-bottom: 14px;
+    }
+  
+    #chooseWisely {
+      padding: 10px 14px;
+      font-size: 15px;
+    }
+  
+    .yes-gif {
+      width: min(360px, 92vw);
+    }
+  
+    /* Make the carousel fit nicer */
+    .container3d {
+      width: min(390px, 92vw);
+      height: 220px;
+    }
+  
+    .item3d {
+      width: 260px;
+      height: 180px;
+      padding: 16px;
+    }
+  
+    .item3d img {
+      border-radius: 12px;
+    }
+  
+    .buttons {
+      margin-top: 30px;
+      gap: 12px;
+    }
+  
+    button {
+      padding: 14px 18px;
+      font-size: 17px;
+      min-width: 120px;
+    }
+  
+    .message {
+      font-size: 16px;
+      margin-top: 14px;
+    }
   }
   
+  @supports (padding: env(safe-area-inset-top)) {
+    body {
+      padding-top: calc(14px + env(safe-area-inset-top));
+      padding-bottom: calc(14px + env(safe-area-inset-bottom));
+    }
+  }
